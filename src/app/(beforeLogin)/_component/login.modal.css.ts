@@ -1,5 +1,6 @@
-// styles.css.ts
-import { style, globalStyle } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css'
+
+import { vars } from '@/styles/globalTheme.css'
 
 // 모달 배경 스타일
 export const modalBackground = style({
@@ -8,21 +9,16 @@ export const modalBackground = style({
   display: 'flex',
   justifyContent: 'center',
   position: 'absolute',
-  backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  backgroundColor: vars.themeColor.color.modalBackground,
   top: 0,
   left: 0,
   right: 0,
   bottom: 0,
-});
-
-// 다크 모드에서의 모달 배경 변경
-globalStyle(`.${modalBackground} @media (prefers-color-scheme: dark)`, {
-  backgroundColor: 'rgba(91, 112, 131, 0.4)',
-});
+})
 
 // 모달 기본 스타일
 export const modal = style({
-  backgroundColor: 'rgb(var(--background-end-rgb))',
+  backgroundColor: vars.themeColor.color.modalContentBackground,
   position: 'relative',
   top: '5%',
   maxWidth: '80vw',
@@ -31,27 +27,27 @@ export const modal = style({
   display: 'flex',
   flexDirection: 'column',
   height: '450px',
-});
+})
 
 // 모달 헤더 스타일
 export const modalHeader = style({
   padding: '36px 80px 20px',
   fontSize: '31px',
   fontWeight: 'bold',
-});
+})
 
 // 모달 바디 스타일
 export const modalBody = style({
   flex: 1,
   padding: '0 80px',
-});
+})
 
 // 모달 폼 스타일
 export const modalForm = style({
   display: 'flex',
   flexDirection: 'column',
   flex: 1,
-});
+})
 
 // 입력 레이블 및 입력 필드 스타일
 export const inputDiv = style({
@@ -60,7 +56,7 @@ export const inputDiv = style({
   height: '56px',
   position: 'relative',
   margin: '12px 0',
-});
+})
 
 export const inputLabel = style({
   width: '100%',
@@ -73,11 +69,11 @@ export const inputLabel = style({
   height: '56px',
   padding: '8px 8px 0',
   color: 'rgb(83, 100, 113)',
-});
+})
 
 globalStyle(`.${inputLabel}:focus-within`, {
   color: 'red',
-});
+})
 
 export const input = style({
   width: '100%',
@@ -86,12 +82,12 @@ export const input = style({
   marginTop: '16px',
   padding: '12px 8px 8px',
   outline: 'none',
-});
+})
 
 // 모달 푸터 및 액션 버튼 스타일
 export const modalFooter = style({
   padding: '24px 80px',
-});
+})
 
 export const actionButton = style({
   width: '100%',
@@ -102,15 +98,15 @@ export const actionButton = style({
   fontSize: '17px',
   cursor: 'pointer',
   border: 'none',
-});
+})
 
 globalStyle(`.${actionButton}:disabled`, {
   opacity: 0.5,
-});
+})
 
 globalStyle(`.${actionButton}:hover`, {
   backgroundColor: 'rgb(39,44,48)',
-});
+})
 
 export const closeButton = style({
   width: '34px',
@@ -125,16 +121,16 @@ export const closeButton = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-});
+})
 
 globalStyle(`.${closeButton}:hover`, {
   backgroundColor: 'rgba(15,20,25, 0.1)',
-});
+})
 
 globalStyle(`.${closeButton} @media (prefers-color-scheme: dark)`, {
   backgroundColor: 'black',
-});
+})
 
 globalStyle(`.${closeButton} svg`, {
   fill: 'white',
-});
+})

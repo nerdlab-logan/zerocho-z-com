@@ -1,7 +1,7 @@
-import {ReactNode} from "react";
-import styles from '@/app/(beforeLogin)/_component/main.module.css';
+import { ReactNode } from 'react'
+import * as styles from './layout.css'
 
-type Props = { children: ReactNode, modal: ReactNode };
+type Props = { children: ReactNode; modal: ReactNode }
 export default function Layout({ children, modal }: Props) {
   return (
     <div className={styles.container}>
